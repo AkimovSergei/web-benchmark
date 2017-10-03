@@ -6,6 +6,7 @@ use Sa\WebBenchmark\Contracts\Arrayable;
 use Sa\WebBenchmark\Contracts\ResourceInterface;
 use Sa\WebBenchmark\Exceptions\FailedToLoadException;
 use Sa\WebBenchmark\Exceptions\InvalidArgumentException;
+use Sa\WebBenchmark\Logger\FileLogger;
 
 /**
  * Class WebResource
@@ -182,6 +183,7 @@ class WebResource implements ResourceInterface, Arrayable
      *
      * @return $this
      * @throws FailedToLoadException
+     * @throws InvalidArgumentException
      */
     public function load()
     {
@@ -190,6 +192,7 @@ class WebResource implements ResourceInterface, Arrayable
         $content = @file_get_contents($this->url);
 
         if (!$content) {
+            FileLogger::error("Error while loading {$this->getUrl()}");
             throw new FailedToLoadException("Can not load {$this->url}");
         }
 
@@ -198,6 +201,8 @@ class WebResource implements ResourceInterface, Arrayable
         $this->loadTime = round((microtime(true) - $startTime) * 1000, 2);
 
         $this->isLoaded = true;
+
+        FileLogger::info("{$this->getUrl()} loaded {$this->getSizeFormatted()} in {$this->getLoadTimeFormatted()}");
 
         return $this;
     }
@@ -217,5 +222,5 @@ class WebResource implements ResourceInterface, Arrayable
             'attributes' => $this->attributes->toArray(),
         ];
     }
-    
+
 }

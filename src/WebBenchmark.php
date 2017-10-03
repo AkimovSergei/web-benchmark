@@ -8,6 +8,7 @@ use Sa\WebBenchmark\Contracts\ResourceInterface;
 use Sa\WebBenchmark\Events\NotFastestEvent;
 use Sa\WebBenchmark\Events\TwoTimesSlowestEvent;
 use Sa\WebBenchmark\Exceptions\InvalidArgumentException;
+use Sa\WebBenchmark\Logger\FileLogger;
 use Sa\WebBenchmark\Outputs\JsonOutput;
 
 class WebBenchmark implements Arrayable
@@ -67,8 +68,6 @@ class WebBenchmark implements Arrayable
         }
 
         $this->output = $output;
-
-
     }
 
     /**
@@ -108,6 +107,26 @@ class WebBenchmark implements Arrayable
     }
 
     /**
+     * Get output
+     *
+     * @return OutputInterface
+     */
+    public function getOutput(): OutputInterface
+    {
+        return $this->output;
+    }
+
+    /**
+     * Set output
+     *
+     * @param OutputInterface $output
+     */
+    public function setOutput(OutputInterface $output)
+    {
+        $this->output = $output;
+    }
+
+    /**
      * Handle resource
      *
      * @param $resource
@@ -130,23 +149,37 @@ class WebBenchmark implements Arrayable
     /**
      *
      * @throws Exceptions\FailedToLoadException
+     * @throws InvalidArgumentException
      */
     public function run()
     {
+
+        $startTime = microtime(true);
+
+        FileLogger::info("Start benchmark for {$this->getResource()->getUrl()}");
+
         $this->resource->load();
 
         foreach ($this->competitors as $competitor) {
             $competitor->load();
         }
 
+        FileLogger::info("All resources loaded");
+
         $this->processLoadingResults();
+
+        FileLogger::info("Benchmark done in " . round((microtime(true) - $startTime) * 1000, 2) . "ms");
     }
 
     /**
      * Process loaded data
+     * @throws InvalidArgumentException
      */
     protected function processLoadingResults()
     {
+
+        FileLogger::info("Start processing results");
+
         /*
          * Sort competitors by loading time
          */
@@ -197,6 +230,8 @@ class WebBenchmark implements Arrayable
             }
 
         }
+
+        FileLogger::info("Results processed");
 
     }
 

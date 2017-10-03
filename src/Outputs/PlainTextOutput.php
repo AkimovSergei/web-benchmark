@@ -76,7 +76,7 @@ class PlainTextOutput implements OutputInterface
      */
     public function getNewLineChar()
     {
-        return "\r\n";
+        return PHP_EOL;
     }
 
 }

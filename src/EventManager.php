@@ -2,6 +2,8 @@
 
 namespace Sa\WebBenchmark;
 
+use Sa\WebBenchmark\Contracts\EventListenerInterface;
+
 class EventManager
 {
     /**
@@ -21,9 +23,9 @@ class EventManager
      * Attach
      *
      * @param string $eventName
-     * @param string $eventListenerName
+     * @param EventListenerInterface $eventListenerName
      */
-    public function attach($eventName, $eventListenerName)
+    public function attach($eventName, EventListenerInterface $eventListenerName)
     {
         if (!isset($this->events[$eventName])) {
             $this->events[$eventName] = [];
@@ -46,13 +48,8 @@ class EventManager
 
         $event = new $name($webBenchmark);
 
-        dump($event);
-
         foreach ($this->events[$name] as $eventListener) {
-
-            dd($eventListener, new $eventListener);
-
-            (new $eventListener)->handle($event);
+            $eventListener->handle($event);
         }
     }
 

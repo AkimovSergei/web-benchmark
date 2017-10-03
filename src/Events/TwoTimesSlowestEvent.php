@@ -19,7 +19,6 @@ class TwoTimesSlowestEvent implements EventInterface
      */
     public function __construct(WebBenchmark $webBenchmark)
     {
-
         $this->webBenchmark = $webBenchmark;
     }
 
