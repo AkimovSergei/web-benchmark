@@ -46,10 +46,13 @@ $webBenchmark->setEventManager($eventManager);
 
 ```
 
+
+
 __Available event managers:__
 
 * ```NotifyViaEmailEventListener``` - Send email, if benchmarked website is loaded slower than at least one of the competitors
 * ```NotifyViaSmsEventListener``` - Send SMS, if benchmarked website is loaded twice as slow as at least one of the competitors
+
 
 
 
@@ -76,4 +79,14 @@ $webBenchmark->setOutput(new JsonOutput);
 $json = $webBenchmark->output();
 
 ```
+
+__Available output:__
+
+* ```JsonOutput```
+* ```HtmlOutput```
+* ```ConsoleOutput```
+* ```FileOutput```
+* ```PlainTextOutput```
+
+
 
