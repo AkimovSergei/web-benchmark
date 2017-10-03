@@ -6,7 +6,7 @@
 
 ## Configuration
 
-Configuration file: __Configs/app.php__
+Configuration file: `Configs/app.php`
 
 ```php
 
