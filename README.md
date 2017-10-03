@@ -4,6 +4,44 @@
 
 ```composer require sa/web-benchmark```
 
+## Configuration
+
+Configuration file: __Configs/app.php__
+
+```php
+
+<?php
+
+return [
+    'mail' => [
+        'driver' => 'smtp',
+        'smtp' => [
+            // SMTP configs
+            'host' => 'smtp.mailtrap.io',
+            'port' => 2525,
+            'username' => '',
+            'password' => '',
+        ],
+        'from' => [
+            // Sender 
+            'email' => 'report@web.benchmark',
+            'name' => 'Web Benchmark',
+        ],
+        'to' => [
+            // Send reports to
+            'email@example.com'
+        ],
+    ],
+    'sms' => [
+        'api_key' => 'API_KEY_EXAMPLE',
+        'from' => 'Web Benchmark',
+    ]
+];
+
+
+```
+
+
 ## Usage
 
 **Creating instance**
