@@ -2,7 +2,7 @@
 
 ## Installation
 
-```composer require sa/web-benchmark```
+```composer require "sa/web-benchmark":"dev-master"```
 
 ## Configuration
 
