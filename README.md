@@ -127,4 +127,34 @@ __Available output:__
 * ```PlainTextOutput```
 
 
+__Example__
 
+*Create  ```index.php```*
+
+```php
+
+<?php
+
+require "../vendor/autoload.php";
+
+use Sa\WebBenchmark\Outputs\ConsoleOutput;
+use Sa\WebBenchmark\WebBenchmark;
+
+/**
+ * @param $resource
+ * @param array $competitors
+ */
+function main($resource, array $competitors)
+{
+    $webBenchmark = new WebBenchmark($resource, $competitors, new ConsoleOutput);
+
+    $webBenchmark->run();
+
+    echo $webBenchmark->output();
+}
+
+main("https://www.google.com", ["https://laravel.com", "https://github.com", "https://www.facebook.com"]);
+
+```
+
+```$ php index.php```

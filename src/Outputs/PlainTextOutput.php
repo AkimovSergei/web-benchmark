@@ -18,24 +18,27 @@ class PlainTextOutput implements OutputInterface
     public function output(WebBenchmark $webBenchmark)
     {
 
-        $text = "";
+        $text = PHP_EOL;
+        $text .= PHP_EOL . "[" . date(\DateTime::ISO8601) . "] Processed {$webBenchmark->getResource()->getUrl()} in {$webBenchmark->getResource()->getLoadTime()}ms";
 
-        $text .= $this->getNewLineChar();
-        $text .= $this->getNewLineChar() . "[" . date(\DateTime::ISO8601) . "] Processed {$webBenchmark->getResource()->getUrl()} in {$webBenchmark->getResource()->getLoadTime()}ms";
-        $text .= $this->getNewLineChar() . "\tIs fastest: " . ($webBenchmark->getResource()->getAttributes()->isFastest() ? 'true' : 'false');
-        $text .= $this->getNewLineChar() . "\tIs slowest: " . ($webBenchmark->getResource()->getAttributes()->isSlowest() ? 'true' : 'false');
-
-        $urlMaxLength = strlen($webBenchmark->getResource()->getUrl()) + 3;
-        $sizeMaxLength = strlen($webBenchmark->getResource()->getSizeFormatted());
-        $timeMaxLength = strlen($webBenchmark->getResource()->getLoadTimeFormatted());
+        $outputLengths = [
+            "url" => strlen($webBenchmark->getResource()->getUrl()) + 3,
+            "size" => strlen($webBenchmark->getResource()->getSizeFormatted()),
+            "time" => strlen($webBenchmark->getResource()->getLoadTimeFormatted()),
+            "diff" => strlen($webBenchmark->getResource()->getLoadDiffFormatted($webBenchmark->getResource())),
+        ];
 
         foreach ($webBenchmark->getCompetitors() as $compareResource) {
-            $urlMaxLength = max($urlMaxLength, strlen($compareResource->getUrl()));
-            $sizeMaxLength = max($sizeMaxLength, strlen($compareResource->getSizeFormatted()));
-            $timeMaxLength = max($timeMaxLength, strlen($compareResource->getLoadTimeFormatted()));
+            $diffLoadTime = ($compareResource->getLoadTime() - $webBenchmark->getResource()->getLoadTime());
+            $diffString = number_format($diffLoadTime, 2, '.', '');
+
+            $outputLengths['url'] = max($outputLengths['url'], strlen($compareResource->getUrl()));
+            $outputLengths['size'] = max($outputLengths['size'], strlen($compareResource->getSizeFormatted()));
+            $outputLengths['time'] = max($outputLengths['time'], strlen($compareResource->getLoadTimeFormatted()));
+            $outputLengths['diff'] = max($outputLengths['diff'], strlen($diffString));
         }
 
-        $strLen = $urlMaxLength + $sizeMaxLength + $timeMaxLength + 7;
+        $strLen = array_sum($outputLengths) + ((count($outputLengths) - 1) * 3) + 4;
 
         $allResources = array_merge($webBenchmark->getCompetitors(), [$webBenchmark->getResource()]);
 
@@ -43,40 +46,42 @@ class PlainTextOutput implements OutputInterface
             return $l->getLoadTime() <=> $r->getLoadTime();
         });
 
-        $text .= $this->getNewLineChar() . str_repeat("_", $strLen);
-        $text .= $this->getNewLineChar() . "| " . str_pad("Url", $urlMaxLength, ' ') . " | " . str_pad("Size", $sizeMaxLength, ' ') . " | " . str_pad("Time", $timeMaxLength, ' ') . " |";
-        $text .= $this->getNewLineChar() . str_repeat("_", $strLen);
+        $text .= PHP_EOL . str_repeat("-", $strLen);
+        $text .= PHP_EOL
+            . "| " . str_pad("Url", $outputLengths['url'], ' ')
+            . " | " . str_pad("Size", $outputLengths['size'], ' ')
+            . " | " . str_pad("Time", $outputLengths['time'], ' ')
+            . " | " . str_pad("Diff", $outputLengths['diff'], ' ')
+            . " |";
+        $text .= PHP_EOL . str_repeat("-", $strLen);
+
         foreach ($allResources as $compareResource) {
-            $text .= $this->getNewLineChar() . $this->generateTableRow($compareResource, $urlMaxLength, $sizeMaxLength, $timeMaxLength);
-            $text .= $this->getNewLineChar() . str_repeat("_", $strLen);
+            $text .= PHP_EOL . $this->generateTableRow($webBenchmark->getResource(), $compareResource, $outputLengths);
+            $text .= PHP_EOL . str_repeat("-", $strLen);
         }
 
-        return $text . $this->getNewLineChar();
+        return $text . PHP_EOL;
     }
 
     /**
-     * generate table row
+     * Generate table row
      *
-     * @param WebResource $webResource
-     * @param $urlMaxLength
-     * @param $sizeMaxLength
-     * @param $timeMaxLength
+     * @param WebResource $resource
+     * @param WebResource $competitor
+     * @param $outputLengths
      * @return string
      */
-    public function generateTableRow(WebResource $webResource, $urlMaxLength, $sizeMaxLength, $timeMaxLength)
+    public function generateTableRow(WebResource $resource, WebResource $competitor, $outputLengths)
     {
-        $url = ($webResource->isMain() ? '*' : '') . $webResource->getUrl() . ($webResource->isMain() ? '*' : '');
-        return "| " . str_pad($url, $urlMaxLength, ' ') . " | " . str_pad($webResource->getSizeFormatted(), $sizeMaxLength, ' ') . " | " . str_pad($webResource->getLoadTimeFormatted(), $timeMaxLength, ' ') . " |";
-    }
+        $url = ($competitor->isMain() ? '*' : '') . $competitor->getUrl() . ($competitor->isMain() ? '*' : '');
+        return sprintf(
+            "| %s | %s | %s | %s |",
+            str_pad($url, $outputLengths['url'], ' '),
+            str_pad($competitor->getSizeFormatted(), $outputLengths['size'], ' '),
+            str_pad($competitor->getLoadTimeFormatted(), $outputLengths['time'], ' '),
+            str_pad($resource->getLoadDiffFormatted($competitor), $outputLengths['diff'], ' ')
+        );
 
-    /**
-     * New line char
-     *
-     * @return string
-     */
-    public function getNewLineChar()
-    {
-        return PHP_EOL;
     }
 
 }

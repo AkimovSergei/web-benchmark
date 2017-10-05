@@ -68,6 +68,7 @@ class WebResource implements ResourceInterface, Arrayable
         $this->url = $this->validateUrl($url);
         $this->attributes = new WebResourceAttributes();
         $this->isMain = $isPrimary;
+        $this->loadTime = 0;
     }
 
     /**
@@ -183,7 +184,6 @@ class WebResource implements ResourceInterface, Arrayable
      *
      * @return $this
      * @throws FailedToLoadException
-     * @throws InvalidArgumentException
      */
     public function load()
     {
@@ -221,6 +221,28 @@ class WebResource implements ResourceInterface, Arrayable
             'is_loaded' => $this->isLoaded(),
             'attributes' => $this->attributes->toArray(),
         ];
+    }
+
+    /**
+     * Get load diff time
+     *
+     * @param WebResource $competitor
+     * @return float Difference in ms
+     */
+    public function getLoadDiff(WebResource $competitor): float
+    {
+        return $competitor->getLoadTime() - $this->getLoadTime();
+    }
+
+    /**
+     * Get loading difference formatted time
+     *
+     * @param WebResource $competitor
+     * @return string Formatted loading time difference
+     */
+    public function getLoadDiffFormatted(WebResource $competitor): string
+    {
+        return number_format($this->getLoadDiff($competitor), 2, '.', '');
     }
 
 }

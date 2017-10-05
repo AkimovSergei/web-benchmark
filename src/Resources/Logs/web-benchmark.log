@@ -283,3 +283,158 @@
 [2017-10-03 19:03:45] info Start processing results
 [2017-10-03 19:03:47] info Results processed
 [2017-10-03 19:03:47] info Benchmark done in 7365.28ms
+[2017-10-05 09:18:15] info Start benchmark for https://www.google.com
+[2017-10-05 09:18:16] info https://www.google.com loaded 44.68 KiB in 532.20ms
+[2017-10-05 09:18:17] info https://www.facebook.com loaded 185.11 KiB in 741.76ms
+[2017-10-05 09:18:17] info https://twitter.com loaded 123.56 KiB in 524.53ms
+[2017-10-05 09:18:17] info https://laravel.com loaded 43.14 KiB in 183.48ms
+[2017-10-05 09:18:18] info https://symfony.com loaded 38.95 KiB in 693.86ms
+[2017-10-05 09:18:19] info https://github.com loaded 54.37 KiB in 884.21ms
+[2017-10-05 09:18:20] info https://xsolve.software loaded 51.98 KiB in 1220.69ms
+[2017-10-05 09:18:20] info All resources loaded
+[2017-10-05 09:18:20] info Start processing results
+[2017-10-05 09:18:23] info Results processed
+[2017-10-05 09:18:23] info Benchmark done in 7437.09ms
+[2017-10-05 09:19:34] info Start benchmark for https://www.google.com
+[2017-10-05 09:19:35] info https://www.google.com loaded 44.68 KiB in 621.24ms
+[2017-10-05 09:19:35] info https://www.facebook.com loaded 185.11 KiB in 729.67ms
+[2017-10-05 09:19:36] info https://twitter.com loaded 123.56 KiB in 582.71ms
+[2017-10-05 09:19:36] info https://laravel.com loaded 43.14 KiB in 161.53ms
+[2017-10-05 09:19:37] info https://symfony.com loaded 38.95 KiB in 384.49ms
+[2017-10-05 09:19:37] info https://github.com loaded 54.37 KiB in 895.85ms
+[2017-10-05 09:19:39] info https://xsolve.software loaded 51.98 KiB in 1307.08ms
+[2017-10-05 09:19:39] info All resources loaded
+[2017-10-05 09:19:39] info Start processing results
+[2017-10-05 09:19:39] info Results processed
+[2017-10-05 09:19:39] info Benchmark done in 4686.01ms
+[2017-10-05 09:19:55] info Start benchmark for https://www.google.com
+[2017-10-05 09:19:56] info https://www.google.com loaded 44.66 KiB in 450.41ms
+[2017-10-05 09:19:56] info https://www.facebook.com loaded 188.6 KiB in 729.56ms
+[2017-10-05 09:19:57] info https://twitter.com loaded 123.56 KiB in 477.58ms
+[2017-10-05 09:19:57] info https://laravel.com loaded 43.14 KiB in 163.34ms
+[2017-10-05 09:19:57] info https://symfony.com loaded 38.95 KiB in 383.56ms
+[2017-10-05 09:19:58] info https://github.com loaded 54.37 KiB in 995.24ms
+[2017-10-05 09:20:00] info https://xsolve.software loaded 51.98 KiB in 1273.11ms
+[2017-10-05 09:20:00] info All resources loaded
+[2017-10-05 09:20:00] info Start processing results
+[2017-10-05 09:20:00] info Results processed
+[2017-10-05 09:20:00] info Benchmark done in 4476.24ms
+[2017-10-05 09:36:27] info Start benchmark for https://www.google.com
+[2017-10-05 09:36:27] info https://www.google.com loaded 44.68 KiB in 533.34ms
+[2017-10-05 09:36:28] info https://www.facebook.com loaded 185.11 KiB in 751.24ms
+[2017-10-05 09:36:29] info https://twitter.com loaded 123.56 KiB in 839.66ms
+[2017-10-05 09:36:29] info https://laravel.com loaded 43.14 KiB in 148.85ms
+[2017-10-05 09:36:29] info https://symfony.com loaded 38.95 KiB in 437.58ms
+[2017-10-05 09:36:30] info https://github.com loaded 54.37 KiB in 923.18ms
+[2017-10-05 09:36:31] info https://xsolve.software loaded 51.98 KiB in 1014.81ms
+[2017-10-05 09:36:31] info All resources loaded
+[2017-10-05 09:36:31] info Start processing results
+[2017-10-05 09:36:31] info Results processed
+[2017-10-05 09:36:31] info Benchmark done in 4652.08ms
+[2017-10-05 09:39:00] info Start benchmark for https://www.google.com
+[2017-10-05 09:39:01] info https://www.google.com loaded 44.76 KiB in 501.04ms
+[2017-10-05 09:39:02] info https://www.facebook.com loaded 188.35 KiB in 1241.76ms
+[2017-10-05 09:39:02] info https://twitter.com loaded 123.56 KiB in 511.49ms
+[2017-10-05 09:39:02] info https://laravel.com loaded 43.14 KiB in 143.00ms
+[2017-10-05 09:39:03] info https://symfony.com loaded 38.95 KiB in 374.81ms
+[2017-10-05 09:39:04] info https://github.com loaded 54.37 KiB in 889.77ms
+[2017-10-05 09:39:06] info https://xsolve.software loaded 51.98 KiB in 2627.40ms
+[2017-10-05 09:39:06] info All resources loaded
+[2017-10-05 09:39:06] info Start processing results
+[2017-10-05 09:39:06] info Results processed
+[2017-10-05 09:39:06] info Benchmark done in 6292.92ms
+[2017-10-05 09:39:25] info Start benchmark for https://www.google.com
+[2017-10-05 09:39:26] info https://www.google.com loaded 44.75 KiB in 478.98ms
+[2017-10-05 09:39:26] info https://www.facebook.com loaded 184.81 KiB in 736.21ms
+[2017-10-05 09:39:27] info https://twitter.com loaded 123.56 KiB in 848.14ms
+[2017-10-05 09:39:28] info https://laravel.com loaded 43.14 KiB in 374.82ms
+[2017-10-05 09:39:28] info https://symfony.com loaded 38.95 KiB in 318.43ms
+[2017-10-05 09:39:29] info https://github.com loaded 54.37 KiB in 911.71ms
+[2017-10-05 09:39:30] info https://xsolve.software loaded 51.98 KiB in 1097.40ms
+[2017-10-05 09:39:30] info All resources loaded
+[2017-10-05 09:39:30] info Start processing results
+[2017-10-05 09:39:30] info Results processed
+[2017-10-05 09:39:30] info Benchmark done in 4770.44ms
+[2017-10-05 09:39:36] info Start benchmark for https://www.google.com
+[2017-10-05 09:39:36] info https://www.google.com loaded 44.69 KiB in 476.51ms
+[2017-10-05 09:39:37] info https://www.facebook.com loaded 185.11 KiB in 746.84ms
+[2017-10-05 09:39:38] info https://twitter.com loaded 123.56 KiB in 882.51ms
+[2017-10-05 09:39:38] info https://laravel.com loaded 43.14 KiB in 152.27ms
+[2017-10-05 09:39:38] info https://symfony.com loaded 38.95 KiB in 329.65ms
+[2017-10-05 09:39:39] info https://github.com loaded 54.37 KiB in 892.00ms
+[2017-10-05 09:39:40] info https://xsolve.software loaded 51.98 KiB in 1089.67ms
+[2017-10-05 09:39:40] info All resources loaded
+[2017-10-05 09:39:40] info Start processing results
+[2017-10-05 09:39:40] info Results processed
+[2017-10-05 09:39:40] info Benchmark done in 4572.49ms
+[2017-10-05 09:40:05] info Start benchmark for https://www.google.com
+[2017-10-05 09:40:06] info https://www.google.com loaded 44.67 KiB in 472.17ms
+[2017-10-05 09:40:07] info https://www.facebook.com loaded 188.65 KiB in 855.39ms
+[2017-10-05 09:40:07] info https://twitter.com loaded 123.56 KiB in 818.95ms
+[2017-10-05 09:40:08] info https://laravel.com loaded 43.14 KiB in 145.43ms
+[2017-10-05 09:40:08] info https://symfony.com loaded 38.95 KiB in 364.12ms
+[2017-10-05 09:40:09] info https://github.com loaded 55.95 KiB in 1555.18ms
+[2017-10-05 09:40:11] info https://xsolve.software loaded 51.98 KiB in 1071.78ms
+[2017-10-05 09:40:11] info All resources loaded
+[2017-10-05 09:40:11] info Start processing results
+[2017-10-05 09:40:11] info Results processed
+[2017-10-05 09:40:11] info Benchmark done in 5286.26ms
+[2017-10-05 09:41:44] info Start benchmark for https://www.google.com
+[2017-10-05 09:41:44] info https://www.google.com loaded 44.62 KiB in 471.25ms
+[2017-10-05 09:41:46] info https://www.facebook.com loaded 184.84 KiB in 1091.54ms
+[2017-10-05 09:41:46] info https://twitter.com loaded 123.56 KiB in 559.06ms
+[2017-10-05 09:41:46] info https://laravel.com loaded 43.14 KiB in 188.32ms
+[2017-10-05 09:41:47] info https://symfony.com loaded 38.95 KiB in 383.14ms
+[2017-10-05 09:41:48] info https://github.com loaded 54.37 KiB in 895.15ms
+[2017-10-05 09:41:49] info https://xsolve.software loaded 51.98 KiB in 1065.00ms
+[2017-10-05 09:41:49] info All resources loaded
+[2017-10-05 09:41:49] info Start processing results
+[2017-10-05 09:41:49] info Results processed
+[2017-10-05 09:41:49] info Benchmark done in 4659.59ms
+[2017-10-05 09:42:27] info Start benchmark for https://www.google.com
+[2017-10-05 09:42:28] info https://www.google.com loaded 44.78 KiB in 507.10ms
+[2017-10-05 09:42:29] info https://www.facebook.com loaded 184.85 KiB in 1177.35ms
+[2017-10-05 09:42:29] info https://twitter.com loaded 123.56 KiB in 509.80ms
+[2017-10-05 09:42:30] info https://laravel.com loaded 43.14 KiB in 140.51ms
+[2017-10-05 09:42:30] info https://symfony.com loaded 38.95 KiB in 376.92ms
+[2017-10-05 09:42:31] info https://github.com loaded 54.37 KiB in 894.00ms
+[2017-10-05 09:42:32] info https://xsolve.software loaded 51.98 KiB in 1100.77ms
+[2017-10-05 09:42:32] info All resources loaded
+[2017-10-05 09:42:32] info Start processing results
+[2017-10-05 09:42:32] info Results processed
+[2017-10-05 09:42:32] info Benchmark done in 4741.08ms
+[2017-10-05 17:21:09] info Start benchmark for https://www.google.com
+[2017-10-05 17:21:10] info https://www.google.com loaded 44.71 KiB in 536.66ms
+[2017-10-05 17:21:11] info https://www.facebook.com loaded 186.85 KiB in 834.76ms
+[2017-10-05 17:21:11] info https://twitter.com loaded 124.33 KiB in 510.15ms
+[2017-10-05 17:21:11] info https://laravel.com loaded 43.14 KiB in 176.37ms
+[2017-10-05 17:21:12] info https://symfony.com loaded 38.95 KiB in 437.42ms
+[2017-10-05 17:21:13] info https://github.com loaded 49.47 KiB in 886.03ms
+[2017-10-05 17:21:14] info https://xsolve.software loaded 51.63 KiB in 1055.36ms
+[2017-10-05 17:21:14] info All resources loaded
+[2017-10-05 17:21:14] info Start processing results
+[2017-10-05 17:21:14] info Results processed
+[2017-10-05 17:21:14] info Benchmark done in 4451.16ms
+[2017-10-05 17:22:36] info Start benchmark for https://www.google.com
+[2017-10-05 17:22:36] info https://www.google.com loaded 44.65 KiB in 468.67ms
+[2017-10-05 17:22:37] info https://www.facebook.com loaded 186.6 KiB in 818.27ms
+[2017-10-05 17:22:38] info https://twitter.com loaded 124.33 KiB in 513.72ms
+[2017-10-05 17:22:38] info https://laravel.com loaded 43.14 KiB in 159.68ms
+[2017-10-05 17:22:38] info https://symfony.com loaded 38.95 KiB in 352.59ms
+[2017-10-05 17:22:39] info https://github.com loaded 49.47 KiB in 878.75ms
+[2017-10-05 17:22:40] info https://xsolve.software loaded 51.63 KiB in 1365.93ms
+[2017-10-05 17:22:40] info All resources loaded
+[2017-10-05 17:22:40] info Start processing results
+[2017-10-05 17:22:40] info Results processed
+[2017-10-05 17:22:40] info Benchmark done in 4561.26ms
+[2017-10-05 17:22:49] info Start benchmark for https://www.google.com
+[2017-10-05 17:22:50] info https://www.google.com loaded 45.9 KiB in 433.63ms
+[2017-10-05 17:22:50] info https://www.facebook.com loaded 186.88 KiB in 750.27ms
+[2017-10-05 17:22:51] info https://twitter.com loaded 124.33 KiB in 490.24ms
+[2017-10-05 17:22:51] info https://laravel.com loaded 43.14 KiB in 289.69ms
+[2017-10-05 17:22:51] info https://symfony.com loaded 38.95 KiB in 309.97ms
+[2017-10-05 17:22:52] info https://github.com loaded 49.47 KiB in 868.98ms
+[2017-10-05 17:22:52] info All resources loaded
+[2017-10-05 17:22:52] info Start processing results
+[2017-10-05 17:22:52] info Results processed
+[2017-10-05 17:22:52] info Benchmark done in 3145.7ms

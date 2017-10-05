@@ -31,6 +31,7 @@
             <th>URL</th>
             <th>Size</th>
             <th>Time</th>
+            <th>Diff</th>
         </tr>
     </thead>
     <tbody>
@@ -39,6 +40,7 @@
                 <td class="<?php echo $compareResource->isMain() ? ' current ' : '' ?>"><?php echo htmlentities($compareResource->getUrl()) ?></td>
                 <td class="<?php echo $compareResource->isMain() ? ' current ' : '' ?> text-right"><?php echo htmlentities($compareResource->getSizeFormatted()) ?></td>
                 <td class="<?php echo $compareResource->isMain() ? ' current ' : '' ?> text-right"><?php echo htmlentities($compareResource->getLoadTimeFormatted()) ?></td>
+                <td class="<?php echo $compareResource->isMain() ? ' current ' : '' ?> text-right"><?php echo htmlentities($webBenchmark->getResource()->getLoadDiffFormatted($compareResource)) ?></td>
             </tr>
         <?php endforeach; ?>
     </tbody>
