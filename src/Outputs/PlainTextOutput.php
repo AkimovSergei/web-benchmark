@@ -35,7 +35,7 @@ class PlainTextOutput implements OutputInterface
             $timeMaxLength = max($timeMaxLength, strlen($compareResource->getLoadTimeFormatted()));
         }
 
-        $strLen = $urlMaxLength + $timeMaxLength + 7;
+        $strLen = $urlMaxLength + $sizeMaxLength + $timeMaxLength + 7;
 
         $allResources = array_merge($webBenchmark->getCompetitors(), [$webBenchmark->getResource()]);
 
@@ -51,7 +51,7 @@ class PlainTextOutput implements OutputInterface
             $text .= $this->getNewLineChar() . str_repeat("_", $strLen);
         }
 
-        return $text;
+        return $text . $this->getNewLineChar();
     }
 
     /**

@@ -15,11 +15,7 @@ class ConsoleOutput extends PlainTextOutput
      */
     public function output(WebBenchmark $webBenchmark)
     {
-        $text = parent::output($webBenchmark);
-
-        echo $text;
-
-        return $text;
+        return parent::output($webBenchmark);
     }
 
 }
